@@ -1,0 +1,28 @@
+<h1>Listing bookmarks</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>URL</th>
+    <th>Date Saved</th>
+    <th></th>
+    <th></th>
+    <th></th>
+
+  </tr>
+
+<% @bookmarks.each do |bookmark| %>
+  <tr>
+    <td><%= bookmark.name %></td>
+    <td><%= boookmark.url %></td>
+    <td><%= bookmark.date_saved %></td>
+    <td><%= link_to 'Show', cannon %></td>
+    <td><%= link_to 'Edit', edit_cannon_path(cannon) %></td>
+    <td><%= link_to 'Destroy', cannon, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bookmark', new_bookmark_path %>
