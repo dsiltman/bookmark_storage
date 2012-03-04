@@ -1,30 +1,14 @@
-<h1>Listing bookmarks</h1>
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to "#{t("web-app-theme.list", :default => "List")}", bookmarks_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_bookmark_path %></li>
+    </ul>
+  </div>          
+  <div class="content">          
+    <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> Bookmarks</h2>
+     <%= render 'table_of_all_bookmarks' %>
+  </div>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>URL</th>
-    <th>Date Saved</th>
-    <th></th>
-    <th></th>
-    <th></th>
-
-  </tr>
- 
-<% @bookmarks.each do |bookmark| %>
-  <tr>
-    <td><%= bookmark.name %></td>
-    <td><%= boookmark.url %></td>
-    <td><%= bookmark.date_saved %></td>
-    <td><%= link_to 'Show', bookmark %></td>
-    <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-    <td><%= link_to 'Destroy', bookmark, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-
-
-</table>
-
-<br />
-
-<%= link_to 'New Bookmark', new_bookmark_path %>
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

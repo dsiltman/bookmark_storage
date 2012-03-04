@@ -1,0 +1,7 @@
+<%= render 'layouts/navigation' %>
+
+<h1>New bookmark</h1>
+
+<%= render 'layouts/form' %>
+
+<%= link_to 'Back', bookmarks_path %>

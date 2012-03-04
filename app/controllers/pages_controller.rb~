@@ -1,0 +1,18 @@
+class PagesController < ApplicationController
+  def edit
+    @title= "Edit"
+  end
+
+  def index
+    @title= "Edit"
+  end
+
+  def new
+    @title= "Edit"
+  end
+
+  def show
+    @title= "Edit"
+  end
+
+end

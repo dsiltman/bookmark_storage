@@ -1,5 +1,13 @@
 BookmarkStorage::Application.routes.draw do
 	
+  get "pages/edit"
+
+  get "pages/index"
+
+  get "pages/new"
+
+  get "pages/show"
+
 	resources :bookmarks
 	 
   # The priority is based upon order of creation:

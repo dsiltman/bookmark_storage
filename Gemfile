@@ -6,6 +6,9 @@ gem 'rails', '3.0.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'haml'
+gem 'devise'
+gem 'kaminari'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -29,3 +32,35 @@ gem 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+
+group :development do
+  gem 'web-app-theme', '>= 0.6.2'
+  gem 'annotate', '2.4.0'
+  gem 'faker', '0.3.1'
+	gem 'capybara'
+  gem 'haml-rails'
+  gem 'hpricot'
+  gem 'ruby_parser'
+  gem 'web-app-theme-rails'
+  
+end
+
+group :test do
+   gem 'webrat', '0.7.1' 
+end
+
+group :development, :test do
+  gem 'rspec-rails', '2.6.1'
+  gem 'autotest-standalone', :require => 'autotest'
+  gem 'autotest-rails-pure'
+  gem 'ZenTest'
+  gem 'redgreen'
+  gem 'turn'
+  gem 'rspec-core', '2.6.4'
+  gem 'rspec-expectations', '2.6.0'  
+  gem 'test-unit'
+  gem 'autotest-notification'
+
+end
+

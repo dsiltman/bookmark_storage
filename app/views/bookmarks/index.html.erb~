@@ -1,28 +1,48 @@
-<h1>Listing bookmarks</h1>
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to "#{t("web-app-theme.list", :default => "List")}", bookmarks_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_bookmark_path %></li>
+    </ul>
+  </div>          
+  <div class="content">          
+    <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> Bookmarks</h2>
+    <div class="inner">
+      <table class="table">
+        <tr>             
+          <th class="first">ID</th>
+                    <th>
+            <%= t("activerecord.attributes.bookmark.url", :default => t("activerecord.labels.url", :default => "Url")) %>
+          </th>
+                    <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @bookmarks.each do |bookmark| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td>
+            <%= bookmark.id %>
+          </td>
+                    <td>
+            <%= link_to bookmark.url, bookmark_path(bookmark) %>
+          </td>
+                    <td>
+            <%= bookmark.created_at %>
+          </td>
+          <td class="last">
+            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", bookmark_path(bookmark) %> |
+            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_bookmark_path(bookmark) %> |
+            <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", bookmark_path(bookmark), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+          </td>
+        </tr>          
+        <% end -%>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>URL</th>
-    <th>Date Saved</th>
-    <th></th>
-    <th></th>
-    <th></th>
-
-  </tr>
-
-<% @bookmarks.each do |bookmark| %>
-  <tr>
-    <td><%= bookmark.name %></td>
-    <td><%= boookmark.url %></td>
-    <td><%= bookmark.date_saved %></td>
-    <td><%= link_to 'Show', cannon %></td>
-    <td><%= link_to 'Edit', edit_cannon_path(cannon) %></td>
-    <td><%= link_to 'Destroy', cannon, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Bookmark', new_bookmark_path %>
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

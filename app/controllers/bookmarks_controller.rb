@@ -1,56 +1,73 @@
 class BookmarksController < ApplicationController
 	 # GET /bookmarks
   # GET /bookmarks.xml
+     
   def index
     @bookmarks = Bookmark.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @bookmarks }
     end
   end
   
-  
-	def list
-		@bookmarks = Bookmark.find(:all)
-   end
-   
-   
+	 # GET /bookmarks/1
+	 # GET /bookmarks/1.xml
+     
 def show
-   	 @bookmarks = Bookmark.find(params[:name])
+	@bookmark = Bookmark.find(params[:id])
+   	 respond_to do |format|
+      format.html # new.html.erb  
    end
-   def new
+ end  
+ 
+ # GET /bookmarks/new
+ # GET /bookmarks/new.xml
+  def new
    	 @bookmark = Bookmark.new
+   	 respond_to do |format|
+      format.html # new.html.erb
+   end
    end
    
-   
+  # POST /bookmarks
+  # POST /bookmarks.xml
    def create
    	 @bookmark = Bookmark.new(params[:bookmark])
-      if @bookmark.save
-            redirect_to :action => 'list'
-      else
-            render :action => 'new'
-      end
+
+     if @bookmark.save
+        redirect_to(@bookmark, :notice => 'Bookmark was successfully created.') 
+    else
+         render :action => "new" 
    end
-   
-   
+   end
+
+  # GET /bookmarks/1/edit
    def edit
-   	 @book = Book.find(params[:name])
+   	 @bookmark = Bookmark.find(params[:id])
    end
    
-   
+  # PUT /bookmarks/1
+  # PUT /bookmarks/1.xml   
    def update
-   	 @book = Book.find(params[:id])
+   	 @bookmark = Bookmark.find(params[:id])
+   	     respond_to do |format|
       if @bookmark.update_attributes(params[:bookmark])
-      	redirect_to :action => 'show', :name => @book
+      	 format.html { redirect_to(@bookmark, :notice => 'Bookmark was successfully updated.') }
       else
-         render :action => 'edit'
+         format.html { render :action => "edit" }
       end
    end
-   
-   
-   def delete
-   	 Bookmark.find(params[:name]).destroy
-      redirect_to :action => 'list'
-   end
+ end
+ 
+  # DELETE /bookmarks/1
+  # DELETE /bookmarks/1.xml   
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(bookmarks_url) }
+
+    end
+  end
 end

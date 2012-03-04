@@ -1,0 +1,52 @@
+Script started on Sat 25 Feb 2012 04:56:24 PM CST
+]0;student@matcUbuntu: ~/Dropbox/Rails/Projects/One/bookmark_storagestudent@matcUbuntu:~/Dropbox/Rails/Projects/One/bookmark_storage$ generate model Bookmark
+generate: command not found
+]0;student@matcUbuntu: ~/Dropbox/Rails/Projects/One/bookmark_storagestudent@matcUbuntu:~/Dropbox/Rails/Projects/One/bookmark_storage$ script generate model Bookmark
+Script started, file is generate
+]0;student@matcUbuntu: ~/Dropbox/Rails/Projects/One/bookmark_storagestudent@matcUbuntu:~/Dropbox/Rails/Projects/One/bookmark_storage$ rake db:create
+db/test.sqlite3 already exists
+db/development.sqlite3 already exists
+db/development.sqlite3 already exists
+]0;student@matcUbuntu: ~/Dropbox/Rails/Projects/One/bookmark_storagestudent@matcUbuntu:~/Dropbox/Rails/Projects/One/bookmark_storage$ rails generate model Bookmark url:d ata [K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[Kl:s tring name:string date_saved: st[K[K[Kstring
+[1m[37m      invoke[0m  active_record
+[1m[32m      create[0m    db/migrate/20120225232454_create_bookmarks.rb
+[1m[32m      create[0m    app/models/bookmark.rb
+[1m[37m      invoke[0m    test_unit
+[1m[32m      create[0m      test/unit/bookmark_test.rb
+[1m[32m      create[0m      test/fixtures/bookmarks.yml
+]0;student@matcUbuntu: ~/Dropbox/Rails/Projects/One/bookmark_storagestudent@matcUbuntu:~/Dropbox/Rails/Projects/One/bookmark_storage$ rails generate controllr[Ker Bookmarks [A
+[1m[32m      create[0m  app/controllers/bookmarks_controller.rb
+[1m[37m      invoke[0m  erb
+[1m[32m      create[0m    app/views/bookmarks
+[1m[37m      invoke[0m  test_unit
+[1m[32m      create[0m    test/functional/bookmarks_controller_test.rb
+[1m[37m      invoke[0m  helper
+[1m[32m      create[0m    app/helpers/bookmarks_helper.rb
+[1m[37m      invoke[0m    test_unit
+[1m[32m      create[0m      test/unit/helpers/bookmarks_helper_test.rb
+]0;student@matcUbuntu: ~/Dropbox/Rails/Projects/One/bookmark_storagestudent@matcUbuntu:~/Dropbox/Rails/Projects/One/bookmark_storage$ bundle exec rake db:migrate
+==  CreateBookmarks: migrating ================================================
+-- create_table(:bookmarks)
+   -> 0.0054s
+==  CreateBookmarks: migrated (0.0056s) =======================================
+
+]0;student@matcUbuntu: ~/Dropbox/Rails/Projects/One/bookmark_storagestudent@matcUbuntu:~/Dropbox/Rails/Projects/One/bookmark_storage$ git add .
+]0;student@matcUbuntu: ~/Dropbox/Rails/Projects/One/bookmark_storagestudent@matcUbuntu:~/Dropbox/Rails/Projects/One/bookmark_storage$ git commui[K[Kit -m "no ide where i am at "
+[master a12e6b9] no ide where i am at
+ 57 files changed, 10373 insertions(+), 0 deletions(-)
+ create mode 100644 .gitignore
+ create mode 100644 Gemfile
+ create mode 100644 Gemfile.lock
+ create mode 100644 Rakefile
+ create mode 100644 app/controllers/application_controller.rb
+ create mode 100644 app/controllers/bookmarks_controller.rb
+ create mode 100644 app/controllers/bookmarks_controller.rb~
+ create mode 100644 app/helpers/application_helper.rb
+ create mode 100644 app/helpers/bookmarks_helper.rb
+ create mode 100644 app/models/bookmark.rb
+ create mode 100644 app/models/bookmark.rb~
+ create mode 100644 app/views/bookmarks/_form.html.erb
+ create mode 100644 app/views/bookmarks/edit.html.erb
+ create mode 100644 app/views/bookmarks/index.html.erb
+ create mode 100644 app/views/bookmarks/index.html.erb~
